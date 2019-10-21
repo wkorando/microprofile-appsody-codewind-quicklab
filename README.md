@@ -80,28 +80,33 @@ Let's look at this feature in action.
 
 3. In VS Code add the **cloud-native-microprofile** project folder to the explorer
 	![](images/add-folder.png)
-4. 	In the project under **src/main/java/application** create a new file **Hello.java**
-5. Edit ** StarterResource.java** to look like below:
+4. 	In the project under **src/main/java/dev/appsody/starter** create a new file **Hello.java**
+5. Edit **Hello.java** to look like below:
 	
 	```java
-	package application;
-
+	package dev.appsody.starter;
+	
 	import javax.ws.rs.GET;
 	import javax.ws.rs.Path;
+	import javax.ws.rs.QueryParam;
 	
-	@Path("/resource")
-	public class StarterResource {
+	@Path("/v1/hello")
+	public class Hello {
 	
 	    @GET
-	    public String getRequest() {
-	        return "StarterResource response";
+	    public String getRequest(@QueryParam("name") String name) {
+	        if(name == null){
+	            return "Hello World";
+	        } else {
+	            return "Hello " + name;         
+	        }
 	    }
 	}
 	```
 6. You can view the status of the re-build and re-deploy by looking at the status indictaor next to the project under the Codewind context. Once status returnss to [Running][Build Suceeded] you can refresh your browser window to view the change we made. 
 	![](images/project-status.png)	
 1. In VS Code click the "go to application" icon	![](images/open-project.png)
-2. Append `/v1/hello?name=EclipseCon` to the end of the url
+2. Append `/starter/v1/hello?name=EclipseCon` to the end of the url
 
 ### Viewing Application Logs
 
