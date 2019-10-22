@@ -134,7 +134,13 @@ The cloud native world demands developer learn a lot of new skills that traditio
 1. First we will need to start our minikube cluster:
 
 	```
-	./start-minikube.sh
+	minikube start
+	```
+
+1. Next we will need to setup docker registry for the local minikube cluster, so that minikube can pull the image we will be sending it in the next step. To do that run the following command:
+
+	```
+	eval $(minikube docker-env)
 	```
 
 1. To deploy the application we just created to a kubernetes cluster, in this case a locally running instance of [minikube](https://github.com/kubernetes/minikube), run the following command:
