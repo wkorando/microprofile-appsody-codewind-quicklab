@@ -30,7 +30,7 @@ We recommend working with the latest available version of each.
 
 ## Getting Familiar with Appsody
 
-[Appsody](https://appsody.dev/) is a command-line interface for creating, building, and deploying cloud-native projects. Let's look at how to use Appsody to initialize a Spring Boot project. 
+[Appsody](https://appsody.dev/) is a command-line interface for creating, building, and deploying cloud-native projects. Let's look at how to use Appsody to initialize a Microprofile project. 
 
 Appsody uses a concept called "stacks". The appsody CLI defines a few simple commands that work with defined stacks to create, run, test, debug, build, and deploy applications to Kubernetes. To view available stacks run the following command:
 
@@ -55,12 +55,8 @@ experimental	quarkus                  	0.1.5    	*default         	Quarkus runti
 experimental	vertx                    	0.1.1    	*default         	Eclipse Vert.x runtime for running Java applications   
 ```
 
-Organizations will have their own specific needs and requirements. For which custom stacks can be created, however Appsody has several pre-defined stacks as well. To view available stacks run this command:
-
-``` 
-appsody repo add incubator https://raw.githubusercontent.com/seabaylea/stacks/javametrics-dev/index.yaml
-```
-
+Organizations will have their own specific needs and requirements. For which custom stacks can be created, which can be built of existing stacks, or fully created new. For more information on creating custom stacks you can read this article on [IBM Developer](https://developer.ibm.com/articles/customizing-appsody/).
+ 
 ## Improving Developer Productivity with Eclipse Codewind
 
 [Eclipse Codewind](https://www.eclipse.org/codewind/) is a plugin for IDEs, currently available in VS Code, Eclipse, and Eclipse Che, that helps improve developer productivity when developing containerized applications. Let's explore how Codewind can help you be a more productive developer.
@@ -68,13 +64,13 @@ appsody repo add incubator https://raw.githubusercontent.com/seabaylea/stacks/ja
 1. Open VS Code (press **command** + **space bar** and type "VS Code" into the dialog box)
 2. In the explorer window under **CODEWIND** click on the "**+**" to create a new project
 	![](images/codewind-explorer.png)
-3. In the dialog pop-up search for "Spring template" and select the "Spring template" option	![](images/codewind-new-project.png)
+3. In the dialog pop-up search for "Microprofile template" and select the "Appsody Microprofile template" option	![](images/codewind-new-project.png)
 4. Enter **cloud-native-microprofile** as the project name and hit enter
 	![](images/codewind-new-project-part2.png)
 
 ### Automated Code Reload
 
-A key to increasing developer productivity is shortening and reducing the friction in the feedback loop. `appsody run` will run the Spring application in the foreground, using Spring DevTools to restart the application in the container when changes have been detected. Codewind brings this appsody capability into the IDE in a familiar way.  
+A key to increasing developer productivity is shortening and reducing the friction in the feedback loop. `appsody run` will run the Microprofile application in the foreground, restarting the application in the container when changes have been detected. Codewind brings this appsody capability into the IDE in a familiar way.  
 
 Let's look at this feature in action.
 
